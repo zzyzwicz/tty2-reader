@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "tty2/reader"
+require "irb"
+IRB.start(__FILE__)
