@@ -2,6 +2,6 @@
 
 module TTY2
   class Reader
-    VERSION = "0.9.0.1"
+    VERSION = "0.9.0.2"
   end # Reader
 end # TTY2

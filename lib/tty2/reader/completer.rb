@@ -130,7 +130,7 @@ module TTY2
       # @api public
       def load_completions(line)
         @word = line.word_to_complete
-        context = line.subtext[0..-@word.length]
+        context = line.subtext[0, line.word_start_pos]
         suggestions = handler.(word, context)
         suggestions = suggestions.grep(/^#{Regexp.escape(@word)}/)
         completions.clear
