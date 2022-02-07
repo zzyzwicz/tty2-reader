@@ -33,6 +33,7 @@ module TTY2
         @completions = Completions.new
         @show_initial = false
         @word = ""
+        @completed = false
       end
 
       # Find a suggestion to complete a word
@@ -49,7 +50,7 @@ module TTY2
       #
       # @api public
       def complete(line, direction: :next, initial: false)
-        if initial
+        if initial || @completed
           complete_initial(line, direction: direction)
         elsif @cycling
           complete_next(line, direction: direction)
@@ -68,6 +69,7 @@ module TTY2
       #
       # @api public
       def complete_initial(line, direction: :next)
+        @completed = false
         completed_word = complete_word(line)
         return if @completions.empty?
         if @cycling && completions.size > 1
@@ -165,6 +167,7 @@ module TTY2
         elsif completions.size == 1
           completed_word = completions.first
           line.insert(completions.first[position..-1] + suffix)
+          @completed = true
         end
 
         completed_word

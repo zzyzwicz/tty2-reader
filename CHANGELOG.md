@@ -1,5 +1,11 @@
 # Change log
 
+## [v0.9.0.3] - 2022-02-07
+
+### Added
+* Added support for consecutive initial completions
+
+
 ## [v0.9.0.2] - 2022-02-02
 
 ### Fix
@@ -18,5 +24,6 @@
 ### Fix
 
 
+[v0.9.0.3]: https://github.com/zzyzwicz/tty2-reader/compare/v0.9.0.3
 [v0.9.0.2]: https://github.com/zzyzwicz/tty2-reader/compare/v0.9.0.2
 [v0.9.0.1]: https://github.com/zzyzwicz/tty2-reader/compare/v0.9.0.1
